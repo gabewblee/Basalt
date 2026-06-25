@@ -1,0 +1,49 @@
+Basalt
+======
+
+What is this?
+-------------
+
+Basalt is a LSM-tree based key-value store. It supports
+lookups, inserts, deletes, and range scans over integer
+keys and values.
+
+
+Requirements
+------------
+
+* g++
+* libgtest
+
+
+Commands
+--------
+
+make          Build Basalt
+make cli      Run Basalt
+make test     Test Basalt
+make clean    Remove Basalt
+
+
+Session
+-------
+
+put <key> <val>       Insert/update a key-value pair
+get <key>             Retrieve the value associated with a key
+del <key>             Delete a key-value pair
+scan <start> <end>    Retrieve all pairs whose keys fall within [start, end]
+help                  Print help message
+exit                  Exit the session
+
+
+Project Layout
+--------------
+
+libs/         Libraries
+src/buf/      Extendible buffer pool
+src/database/ LSM-tree engine
+src/disk/     SSTable writer
+src/filter/   Bloom filter
+src/storage/  B+ tree builder
+src/memtable/ AVL-tree memtable
+tests/        Unit tests
